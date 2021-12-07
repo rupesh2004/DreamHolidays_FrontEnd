@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login Page</title>
+	<link rel="icon" type="image/x-icon" href="login.ico">
+	<link rel="stylesheet" type="text/css" href="login_css.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+ 
+</head>
+<body style="background-color: #C2FFF9;">
+
+		<div class="co">
+		
+	
+	<h3 id="h31"><span id="sp1" style="color: red">D</span>ream  <span id="sp1" style="color: red">H</span><img id="dt" src="dt.png">lidays</h3>
+
+	<ul id="p" class="position-absolute top-0 mt-4 float-right">
+	  <li id="p"><a id="lo" href="Tourist_Places.html">Home</a></li>
+	  <li id="p"><a id="lo" href="sign_up.html">Sign Up</a></li>
+	  <li id="p"><a id="lo" href="packages.html">Packages</a></li>
+	  <li id="p"><a id="lo" href="contact_us.html">Contact Us</a></li>
+	</ul>
+	</div>
+	<br>
+	<br><br>
+	<h1 id="h1">LOGIN FORM</h1>
+	<br><br>
+	<img id="login2" src="login2.png">
+
+	<div class="vl"></div>
+	<form  action="#">
+		<input id="t1" type="text" name="Enter Username" placeholder="Enter Username" autocomplete="off">
+		<span id="username" class="text-danger font-weight-bold"> </span>
+		<input id="t2" type="password" name="Enter Password" placeholder="Enter Password" autocomplete="off">
+		<h3 id="pass">Forgot <a id="forgot" href="sign_up.html">Password?</a></h3>
+
+			<input id="btn" type="button" name="Login" value="Login" onclick="return validation()">
+
+	</form>
+
+	<br><br><br><br><br>
+	<div class="links">
+    <a href=""></a>
+    <img id="dt1" src="dt.png"><br>
+    <p class="copy">Don't Be A Tourist,Be A Traveler.</p><br>
+<a href="https://www.facebook.com/"  target="_blank"><i id="insta"  class="fab fa-facebook in1"></i></a>
+<a href="https://www.instagram.com/explore/?hl=en" target="_blank"><i id="insta" class= "fab fa-instagram"></i></a>
+<a href="https://twitter.com/home" target="_blank"><i id="insta" class="social-icon fab fa-twitter"></i></a>
+<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><i id="insta"  class="far fa-envelope"></i></a>
+      <br>
+
+        <p class="copy1">Copyright © 2021 Dream Holydays. All rights reserved</p>
+      <br>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+    	function validation() {
+    		
+    
+    	
+	    	var user=document.getElementById('t1').value;
+	    	var pass = document.getElementById('t2').value;
+    	
+	    	if(user == ""){
+				alert("Please Fill the Username");
+					return false;
+			}
+			if((user.length <= 2) || (user.length > 20)) {
+				alert("Username lenght must be between 2 and 20");
+				return false;	
+			}
+			if(!isNaN(user)){
+				alert(" only characters are allowed");
+				return false;
+			}
+
+
+			if(pass == ""){
+				alert("Please Fill the Password");
+					return false;
+			}
+			if((pass.length <= 2) || (pass.length > 20)) {
+				alert("Password lenght must be between 2 and 20");
+				return false;	
+			}
+
+
+			let data = JSON.parse(localStorage.getItem("userArray"));
+			if(data[0].user == user && data[0].pass == pass) {
+				document.getElementById("btn").onclick = function () {
+        		location.href = "packages.html";
+   			};
+			} else {
+				alert("Login Credentials is not Valid");
+			}
+		}
+
+    </script>
+</body>
+</html>
